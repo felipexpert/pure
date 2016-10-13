@@ -5,9 +5,11 @@ $files = [ 'Optional'
          , 'Present'
          , 'Collection'
          , 'Text'
+         , 'Number'
          , 'Entity'
          , 'entity/Transportador'
          , 'entity/OrdemDeProducao'
+         , 'entity/brindart/OrdemDeProducao'
          , 'loader/Transportador'
          , 'ViewHelper' ];
 
