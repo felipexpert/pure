@@ -11,6 +11,9 @@ $files = [ 'Optional'
          , 'entity/OrdemDeProducao'
          , 'entity/brindart/OrdemDeProducao'
          , 'loader/Transportador'
+         , 'ponto/Day'
+         , 'ponto/Interval'
+         , 'ponto/Util'
          , 'ViewHelper' ];
 
 forEach($files as $file)
