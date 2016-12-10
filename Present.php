@@ -23,6 +23,12 @@ class Present extends Optional {
     return false;
   }
 
+  function bind($f) {
+    return $this->isPresent()
+      ? $f($this->get())
+      : Optional::absent();
+  }
+
   function __toString() {
     return 'Present{reference=' . $this->reference . '}';
   }

@@ -24,4 +24,13 @@ class Entity {
     return 'Entity {key=' . $this->key . ',value=' . $this->value . '}'; 
   }
 
+  public function toArray() {
+    return [ 'key' => $this->key
+           , 'value' => $this->value->toArray() ];
+  }
+
+  public function toJSON() {
+    return json_encode($this->toArray());
+  }
+
 }

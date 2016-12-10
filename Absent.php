@@ -27,4 +27,8 @@ class Absent extends Optional {
   function __toString() {
     return 'Absent';
   }
+
+  function bind() {
+    return Optional::absent();
+  }
 }
