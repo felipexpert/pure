@@ -5,6 +5,7 @@ namespace pure\entity;
 class ClienteCreditoInfo {
      private $limite;
      private $aDever;
+     private $atrasado;
 
 	public function __construct($limite, $aDever) {
 	  $this->limite = $limite;
@@ -16,12 +17,16 @@ class ClienteCreditoInfo {
 	}
 
 	public function getADever() {
-      return $this->aDever;
+          return $this->aDever;
+	}
+	public function getAtrasado() {
+          return $this->atrasado;
 	}
 
 	public function toArray() {
 		return [ 'limite' => $this->limite
-		       , 'aDever' => $this->aDever ];
+		       , 'aDever' => $this->aDever
+                       , 'atrasado' => $this->atrasado ];
 	}
 
 	public function toJSON() {
