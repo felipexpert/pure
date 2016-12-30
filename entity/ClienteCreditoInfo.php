@@ -7,9 +7,10 @@ class ClienteCreditoInfo {
      private $aDever;
      private $atrasado;
 
-	public function __construct($limite, $aDever) {
+	public function __construct($limite, $aDever, $atrasado) {
 	  $this->limite = $limite;
 	  $this->aDever = $aDever;
+          $this->atrasado = $atrasado;
 	}
 
 	public function getLimite() {
