@@ -12,6 +12,13 @@ class FlArray {
     return new FlArray(Collection::map($this->array, $function));
   }
 
+  public function findIndex($function) {
+    forEach($this->array as $key => $value) 
+      if($function($value))
+        return Optional::of($key);
+    return Optional::absent();
+  }
+
   function getArray() {
     return $this->array;
   }
