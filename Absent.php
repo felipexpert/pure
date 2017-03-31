@@ -8,15 +8,15 @@ class Absent extends Optional {
 
   private function __construct() {}
 
-  function isPresent() {
+  public function isPresent() {
     return false;
   }
 
-  function get() {
+  public function get() {
     throw new Exception("Optional->get() cannot be called on an absent value");
   }
 
-  function equals($object) {
+  public function equals($object) {
     return $object === $this;
   }
 
@@ -24,11 +24,11 @@ class Absent extends Optional {
     return static::$instance === null ? static::$instance = new Absent() : static::$instance;
   }
 
-  function __toString() {
+  public function __toString() {
     return 'Absent';
   }
 
-  function bind() {
+  public function bind() {
     return Optional::absent();
   }
 }

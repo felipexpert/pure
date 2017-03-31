@@ -10,26 +10,27 @@ class Present extends Optional {
     $this->reference = $reference;
   }
 
-  function isPresent() {
+  public function isPresent() {
     return true;
   }
 
-  function get() {
+  public function get() {
     return $this->reference;
   }
 
-  function equals($object) {
+  public function equals($object) {
     if($object instanceof Present) return $this->reference === $object->get();
     return false;
   }
 
-  function bind($f) {
+  public function bind($f) {
     return $this->isPresent()
       ? $f($this->get())
       : Optional::absent();
   }
 
-  function __toString() {
+  public function __toString() {
     return 'Present{reference=' . $this->reference . '}';
   }
+
 }

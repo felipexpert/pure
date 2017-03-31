@@ -14,10 +14,14 @@ $files = [ 'Optional'
          , 'entity/brindart/OrdemDeProducao'
          , 'entity/ClienteCreditoInfo'
          , 'entity/Destinatario'
+         , 'entity/FinanceiroContaProgramada'
+         , 'entity/FinanceiroContaProgramadaConta'
+         , 'entity/FinanceiroContaProgramadaBaixa'
          , 'loader/Transportador'
          , 'ponto/Day'
          , 'ponto/Interval'
          , 'ponto/Util'
+         , 'util/Financeiro'
          , 'ViewHelper' ];
 
 forEach($files as $file)

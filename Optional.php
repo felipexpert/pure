@@ -65,4 +65,10 @@ abstract class Optional /*extends Monad*/ {
     if($reference === null) throw new \Exception($message);
     return $reference;
   }
+
+  public static function bogusDate($date) {
+    return $date == '0000-00-00' || $date == null
+      ? Optional::absent()
+      : Optional::of(new \DateTime($date));
+  }
 }
