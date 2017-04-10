@@ -22,6 +22,7 @@ $files = [ 'Optional'
          , 'ponto/Interval'
          , 'ponto/Util'
          , 'util/Financeiro'
+         , 'dateTime/DateTimeUtil'
          , 'ViewHelper' ];
 
 forEach($files as $file)

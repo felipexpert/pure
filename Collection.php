@@ -84,4 +84,25 @@ class Collection {
     return $result;
   }
 
+  public static function fulfill($stop, $genVal, $zero) {
+    $result = [];
+    while(!$stop($zero)) {
+      $result[] = $zero;
+      $zero = $genVal($zero);
+    }
+    return $result;
+  }
+
+  public static function sort($cmp, $array) {
+    $nArray = [];
+    forEach($array as $k => $v) $nArray[$k] = $v;
+    function buildSorter($cmp) {
+      return function($a, $b) use($cmp) {
+        return $cmp($a, $b);
+      };
+    }
+    usort($nArray, buildSorter($cmp)); 
+    return $nArray;
+  }
+
 }

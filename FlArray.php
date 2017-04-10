@@ -34,6 +34,11 @@ class FlArray {
     return Collection::foldl($this->array, $function, $zero);
   }
 
+  public function sort($cmp) {
+    $array = Collection::sort($cmp, $array);
+    return new FlArray($array);
+  }
+
   function getArray() {
     return $this->array;
   }
