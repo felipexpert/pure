@@ -15,6 +15,11 @@ class Text {
     }, '');
   }
 
+  public static function forceNumber($string) {
+    $withoutComma = str_replace([','], '', $string);
+    return (float) $withoutComma;
+  }
+
   public static function removeChars($string, $chars) {
     $output = '';
     $length = strLen($string);
