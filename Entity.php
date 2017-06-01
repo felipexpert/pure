@@ -33,4 +33,8 @@ class Entity {
     return json_encode($this->toArray());
   }
 
+  public static function fromRow($row, $cls) {
+    return new Entity($row['fldId'], $cls::fromRow($row));
+  }
+
 }
