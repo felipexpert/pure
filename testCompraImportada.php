@@ -4,8 +4,10 @@ namespace pure;
 
 require_once 'load.php';
 
-use \pure\module\CompraImportadaStatus;
-use \pure\module\CompraImportadaStatusItem;
+use \pure\model\CompraImportadaStatus;
+use \pure\model\CompraImportadaStatusItem;
+use \pure\model\CompraImportadaXml;
+use \pure\model\CompraImportadaXmlItem;
 use \pure\entity\Fornecedor;
 use \pure\entity\Produto;
 
@@ -21,7 +23,17 @@ class TestCompraImportada {
     ];
     
     $cis = new CompraImportadaStatus(Optional::of($ef), 'cnpj-test', 'nome-fantasia', 'razao-social', $items);
+    static::printLn('Status');
     var_dump($cis);
+
+    $xmlItems = [
+      new CompraImportadaXmlItem('xmlItemCod1', 'xmlItemNome1', 3)
+    , new CompraImportadaXmlItem('xmlItemCod2', 'xmlItemNome2', 5)
+    , new CompraImportadaXmlItem('xmlItemCod3', 'xmlItemNome3', 7)
+    ];
+    $cixml = new CompraImportadaXml('fornCNPJ', 'fornNomeFantasia', 'fornRazaoSocial', 29, $xmlItems); 
+    static::printLn('XMLStatus');
+    var_dump($cixml);
   }
 
   public static function printLn($text) {

@@ -1,6 +1,6 @@
 <?php
 
-namespace pure\module;
+namespace pure\model;
 
 class CompraImportadaStatusItem {
   private $xmlCodigo;
