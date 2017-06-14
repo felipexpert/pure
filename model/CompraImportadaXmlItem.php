@@ -16,4 +16,9 @@ class CompraImportadaXmlItem {
   public function getCodigo() { return $this->codigo; }
   public function getNome() { return $this->nome; }
   public function getQtd() { return $this->qtd; }
+
+  function __toString() {
+    return '{' . $this->codigo . ',' . $this->nome . ',' . $this->qtd . '}';
+  }
+
 }

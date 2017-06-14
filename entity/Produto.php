@@ -22,6 +22,10 @@ class Produto {
   public function getValorCompra() { return $this->valorCompra; }
   public function getValorVenda() { return $this->valorVenda; }
 
+  public function toArray() {
+    return [ 'codigo' => $this->codigo, 'nome' => $this->nome, 'valorCompra' => $this->valorCompra, 'valorVenda' => $this->valorVenda ];
+  }
+
   public static function fromRow($row) {
     return new Produto($row['fldCodigo'], $row['fldNome'], Text::forceNumber($row['fldValorCompra']), Text::forceNumber($row['fldValorVenda']));
   }

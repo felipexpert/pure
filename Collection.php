@@ -3,9 +3,14 @@ namespace pure;
 
 class Collection {
  
-  public static function map($array, $function) {
+  public static function map($array, $function, $sequentialIndicesInResultArray = false) {
     $array2 = [];
-    forEach($array as $k => $v) $array2[$k] = $function($v, $k);
+    if($sequentialIndicesInResultArray)
+      forEach($array as $k => $v)
+        $array2[] = $function($v, $k);
+    else
+      forEach($array as $k => $v)
+        $array2[$k] = $function($v, $k);
     return $array2;
   }
 
@@ -103,6 +108,10 @@ class Collection {
     }
     usort($nArray, buildSorter($cmp)); 
     return $nArray;
+  }
+
+  public static function join($array, $separator = ',') {
+    return join($separator, $array);
   }
 
 }

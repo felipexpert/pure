@@ -19,4 +19,11 @@ class CompraImportadaStatusItem {
   public function getXmlNome() { return $this->xmlNome; }
   public function getXmlQtd() { return $this->xmlQtd; }
   public function getOptProduto() { return $this->optProduto; }
+
+  public function toArray() {
+    return [ 'xmlCodigo' => $this->xmlCodigo
+           , 'xmlNome' => $this->xmlNome
+           , 'xmlQtd' => $this->xmlQtd
+           , 'optProduto' => $this->optEntityProduto->map(function($p) { return $p->toArray(); })->getOrNull() ];
+  }
 }
