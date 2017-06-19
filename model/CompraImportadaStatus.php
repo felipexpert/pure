@@ -27,7 +27,7 @@ class CompraImportadaStatus {
 
   public function toArray() {
     return [ "fornCnpj" => $this->fornCnpj
-           , "formNomeFantasia" => $this->fornNomeFantasia
+           , "fornNomeFantasia" => $this->fornNomeFantasia
            , "fornRazaoSocial" => $this->fornRazaoSocial
            , "optFornecedor" => $this->optEntityForn->map(function($ef) { return $ef->toArray(); })->getOrNull()
            , "itemList" => Collection::map($this->itemList, function($i) { return $i->toArray(); }) ];

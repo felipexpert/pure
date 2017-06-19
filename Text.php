@@ -42,6 +42,11 @@ class Text {
     return $output;
   }
 
+  public static function strReplaceFirst($from, $to, $subject) {
+    $from = '/'.preg_quote($from, '/').'/';
+    return preg_replace($from, $to, $subject, 1);
+  }
+
   public static function escapeQuery($query, $args) {
     $escapedArgs = [];
     forEach($args as $arg) 
@@ -49,7 +54,7 @@ class Text {
     $escaped = $query;
     forEach($escapedArgs as $key => $value) {
       $pos = $key + 1;
-      $escaped = str_replace('?' . $pos, $value, $escaped);
+      $escaped = static::strReplaceFirst('?' . $pos, $value, $escaped);
     }
     return $escaped;
   }
