@@ -8,12 +8,12 @@ use \pure\model\CompraImportadaStatus;
 use \pure\model\CompraImportadaStatusItem;
 use \pure\model\CompraImportadaXml;
 use \pure\model\CompraImportadaXmlItem;
-use \pure\entity\Fornecedor;
+use \pure\entity\Fornecedor2;
 use \pure\entity\Produto;
 
 class TestCompraImportada {
   public static function main() {
-    $f = new Fornecedor('Felipe', 'Miquilini');
+    $f = new Fornecedor2('Felipe', 'Miquilini');
     $ef = new Entity(1, $f);
     $p = new Produto('a', 'produto-nome', 10, 15);
     $ep = new Entity(1, $p);

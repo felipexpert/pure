@@ -134,4 +134,9 @@ class Text {
       return true;
     }
   }
+
+  public static function substring($text, $from, $to = null) {
+    $to = $to ?: strlen($text);
+    return substr($text, $from, $to - $from);
+  }
 }

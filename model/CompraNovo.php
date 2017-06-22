@@ -12,7 +12,7 @@ namespace pure\model;
 class CompraNovo {
   private $tipoId;
   private $fornecedorId;
-  private $nota;
+  private $notaNumero;
   private $notaChave;
   private $status;
   private $usuarioId;
@@ -43,8 +43,8 @@ class CompraNovo {
   /**
    * @return mixed
    */
-  public function getNota() {
-    return $this->nota;
+  public function getNotaNumero() {
+    return $this->notaNumero;
   }
 
   /**

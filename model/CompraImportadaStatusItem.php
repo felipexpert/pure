@@ -7,27 +7,77 @@ class CompraImportadaStatusItem {
   private $xmlNome;
   private $xmlQtd;
   private $xmlValor;
+  private $xmlDesconto;
   private $optEntityProduto;
 
-  public function __construct($xmlCodigo, $xmlNome, $xmlQtd, $xmlValor, $optEntityProduto) {
+  /**
+   * CompraImportadaStatusItem constructor.
+   * @param $xmlCodigo
+   * @param $xmlNome
+   * @param $xmlQtd
+   * @param $xmlValor
+   * @param $xmlDesconto
+   * @param $optEntityProduto
+   */
+  public function __construct($xmlCodigo, $xmlNome, $xmlQtd, $xmlValor, $xmlDesconto, $optEntityProduto) {
     $this->xmlCodigo = $xmlCodigo;
     $this->xmlNome = $xmlNome;
     $this->xmlQtd = $xmlQtd;
     $this->xmlValor = $xmlValor;
+    $this->xmlDesconto = $xmlDesconto;
     $this->optEntityProduto = $optEntityProduto;
   }
 
-  public function getXmlCodigo() { return $this->xmlCodigo; }
-  public function getXmlNome() { return $this->xmlNome; }
-  public function getXmlQtd() { return $this->xmlQtd; }
-  public function getXmlValor() { return $this->xmlValor; }
-  public function getOptProduto() { return $this->optProduto; }
+  /**
+   * @return mixed
+   */
+  public function getXmlCodigo() {
+    return $this->xmlCodigo;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getXmlNome() {
+    return $this->xmlNome;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getXmlQtd() {
+    return $this->xmlQtd;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getXmlValor() {
+    return $this->xmlValor;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getXmlDesconto() {
+    return $this->xmlDesconto;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getOptEntityProduto() {
+    return $this->optEntityProduto;
+  }
+
+
 
   public function toArray() {
     return [ 'xmlCodigo' => $this->xmlCodigo
            , 'xmlNome' => $this->xmlNome
            , 'xmlQtd' => $this->xmlQtd
            , 'xmlValor' => $this->xmlValor
+           , 'xmlDesconto' => $this->xmlDesconto
            , 'optProduto' => $this->optEntityProduto->map(function($p) { return $p->toArray(); })->getOrNull() ];
   }
 }
