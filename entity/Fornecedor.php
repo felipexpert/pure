@@ -6,7 +6,7 @@
  * Time: 13:46
  */
 
-namespace pure\model;
+namespace pure\entity;
 
 
 class Fornecedor {
