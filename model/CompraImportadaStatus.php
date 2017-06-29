@@ -10,26 +10,46 @@ class CompraImportadaStatus {
   private $fornIE;
   private $fornNomeFantasia;
   private $fornRazaoSocial;
+  private $fornEndereco;
+  private $fornNro;
+  private $fornComplemento;
+  private $fornBairro;
+  private $fornMunicipioCodigo;
+  private $fornCep;
   private $notaNumero;
   private $notaChave;
   private $itemList;
 
   /**
    * CompraImportadaStatus constructor.
+   *
    * @param $optEntityForn
    * @param $fornCnpj
+   * @param $fornIE
    * @param $fornNomeFantasia
    * @param $fornRazaoSocial
+   * @param $fornEndereco
+   * @param $fornNro
+   * @param $fornComplemento
+   * @param $fornBairro
+   * @param $fornMunicipioCodigo
+   * @param $fornCep
    * @param $notaNumero
    * @param $notaChave
    * @param $itemList
    */
-  public function __construct($optEntityForn, $fornCnpj, $fornIE, $fornNomeFantasia, $fornRazaoSocial, $notaNumero, $notaChave, $itemList) {
+  public function __construct($optEntityForn, $fornCnpj, $fornIE, $fornNomeFantasia, $fornRazaoSocial, $fornEndereco, $fornNro, $fornComplemento, $fornBairro, $fornMunicipioCodigo, $fornCep, $notaNumero, $notaChave, $itemList) {
     $this->optEntityForn = $optEntityForn;
     $this->fornCnpj = $fornCnpj;
     $this->fornIE = $fornIE;
     $this->fornNomeFantasia = $fornNomeFantasia;
     $this->fornRazaoSocial = $fornRazaoSocial;
+    $this->fornEndereco = $fornEndereco;
+    $this->fornNro = $fornNro;
+    $this->fornComplemento = $fornComplemento;
+    $this->fornBairro = $fornBairro;
+    $this->fornMunicipioCodigo = $fornMunicipioCodigo;
+    $this->fornCep = $fornCep;
     $this->notaNumero = $notaNumero;
     $this->notaChave = $notaChave;
     $this->itemList = $itemList;
@@ -73,6 +93,48 @@ class CompraImportadaStatus {
   /**
    * @return mixed
    */
+  public function getFornEndereco() {
+    return $this->fornEndereco;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornNro() {
+    return $this->fornNro;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornComplemento() {
+    return $this->fornComplemento;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornBairro() {
+    return $this->fornBairro;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornMunicipioCodigo() {
+    return $this->fornMunicipioCodigo;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornCep() {
+    return $this->fornCep;
+  }
+
+  /**
+   * @return mixed
+   */
   public function getNotaNumero() {
     return $this->notaNumero;
   }
@@ -96,6 +158,12 @@ class CompraImportadaStatus {
            , "fornIE" => $this->fornIE
            , "fornNomeFantasia" => $this->fornNomeFantasia
            , "fornRazaoSocial" => $this->fornRazaoSocial
+           , "fornEndereco" => $this->fornEndereco
+           , "fornNro" => $this->fornNro
+           , "fornComplemento" => $this->fornComplemento
+           , "fornBairro" => $this->fornBairro
+           , "fornMunicipioCodigo" => $this->fornMunicipioCodigo
+           , "fornCep" => $this->fornCep
            , "optFornecedor" => $this->optEntityForn->map(function($ef) { return $ef->toArray(); })->getOrNull()
            , "notaNumero" => $this->notaNumero
            , "notaChave" => $this->notaChave

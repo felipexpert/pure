@@ -7,17 +7,45 @@ class CompraImportadaXml {
   private $fornIE;
   private $fornNomeFantasia;
   private $fornRazaoSocial;
+  private $fornEndereco;
+  private $fornNro;
+  private $fornComplemento;
+  private $fornBairro;
+  private $fornMunicipioCodigo;
+  private $fornCep;
   private $notaNumero;
   private $notaChave;
   private $itemList;
 
-  public function __construct($fornCnpj, $fornIE, $fornNomeFantasia, $fornRazaoSocial, $numeroNota, $chaveNota, $itemList) {
+  /**
+   * CompraImportadaXml constructor.
+   * @param $fornCnpj
+   * @param $fornIE
+   * @param $fornNomeFantasia
+   * @param $fornRazaoSocial
+   * @param $fornEndereco
+   * @param $fornNro
+   * @param $fornComplemento
+   * @param $fornBairro
+   * @param $fornMunicipioCodigo
+   * @param $fornCep
+   * @param $notaNumero
+   * @param $notaChave
+   * @param $itemList
+   */
+  public function __construct($fornCnpj, $fornIE, $fornNomeFantasia, $fornRazaoSocial, $fornEndereco, $fornNro, $fornComplemento, $fornBairro, $fornMunicipioCodigo, $fornCep, $notaNumero, $notaChave, $itemList) {
     $this->fornCnpj = $fornCnpj;
     $this->fornIE = $fornIE;
     $this->fornNomeFantasia = $fornNomeFantasia;
     $this->fornRazaoSocial = $fornRazaoSocial;
-    $this->notaNumero = $numeroNota;
-    $this->notaChave = $chaveNota;
+    $this->fornEndereco = $fornEndereco;
+    $this->fornNro = $fornNro;
+    $this->fornComplemento = $fornComplemento;
+    $this->fornBairro = $fornBairro;
+    $this->fornMunicipioCodigo = $fornMunicipioCodigo;
+    $this->fornCep = $fornCep;
+    $this->notaNumero = $notaNumero;
+    $this->notaChave = $notaChave;
     $this->itemList = $itemList;
   }
 
@@ -52,6 +80,48 @@ class CompraImportadaXml {
   /**
    * @return mixed
    */
+  public function getFornEndereco() {
+    return $this->fornEndereco;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornNro() {
+    return $this->fornNro;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornComplemento() {
+    return $this->fornComplemento;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornBairro() {
+    return $this->fornBairro;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornMunicipioCodigo() {
+    return $this->fornMunicipioCodigo;
+  }
+
+  /**
+   * @return mixed
+   */
+  public function getFornCep() {
+    return $this->fornCep;
+  }
+
+  /**
+   * @return mixed
+   */
   public function getNotaNumero() {
     return $this->notaNumero;
   }
@@ -69,4 +139,5 @@ class CompraImportadaXml {
   public function getItemList() {
     return $this->itemList;
   }
+
 }

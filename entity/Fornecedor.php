@@ -225,8 +225,11 @@ class Fornecedor {
     $result = [];
     $ref = new \ReflectionClass($this);
     $props = $ref->getProperties(\ReflectionProperty::IS_PRIVATE);
-    forEach($props as $prop)
-      $result[$prop] = $this->{$prop};
+    forEach($props as $prop) {
+      $propName = $prop->getName();
+      $result[$propName] = $this->{$propName};
+    }
     return $result;
   }
+
 }
