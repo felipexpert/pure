@@ -9,6 +9,8 @@
 namespace pure\entity;
 
 
+use pure\Util;
+
 class Fornecedor {
   private $razaoSocial;
   private $nomeFantasia;
@@ -222,14 +224,7 @@ class Fornecedor {
   }
 
   public function toArray() {
-    $result = [];
-    $ref = new \ReflectionClass($this);
-    $props = $ref->getProperties(\ReflectionProperty::IS_PRIVATE);
-    forEach($props as $prop) {
-      $propName = $prop->getName();
-      $result[$propName] = $this->{$propName};
-    }
-    return $result;
+    return Util::simpleObjToArray($this);
   }
 
 }

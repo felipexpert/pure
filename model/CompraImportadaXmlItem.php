@@ -9,6 +9,8 @@ class CompraImportadaXmlItem {
   private $valor;
   private $desconto;
 
+  private $ncm;
+
   /**
    * CompraImportadaXmlItem constructor.
    * @param $codigo
@@ -16,13 +18,15 @@ class CompraImportadaXmlItem {
    * @param $qtd
    * @param $valor
    * @param $desconto
+   * @param $ncm
    */
-  public function __construct($codigo, $nome, $qtd, $valor, $desconto) {
+  public function __construct($codigo, $nome, $qtd, $valor, $desconto, $ncm) {
     $this->codigo = $codigo;
     $this->nome = $nome;
     $this->qtd = $qtd;
     $this->valor = $valor;
     $this->desconto = $desconto;
+    $this->ncm = $ncm;
   }
 
   /**
@@ -60,8 +64,15 @@ class CompraImportadaXmlItem {
     return $this->desconto;
   }
 
+  /**
+   * @return mixed
+   */
+  public function getNcm() {
+    return $this->ncm;
+  }
+
   function __toString() {
-    return '{' . $this->codigo . ',' . $this->nome . ',' . $this->qtd . ',' . $this->valor . ',' . $this->desconto . '}';
+    return '{' . $this->codigo . ',' . $this->nome . ',' . $this->qtd . ',' . $this->valor . ',' . $this->desconto . ',' . $this->ncm . '}';
   }
 
 }

@@ -8,6 +8,8 @@ class CompraImportadaStatusItem {
   private $xmlQtd;
   private $xmlValor;
   private $xmlDesconto;
+  private $xmlNcm;
+
   private $optEntityProduto;
 
   /**
@@ -17,14 +19,16 @@ class CompraImportadaStatusItem {
    * @param $xmlQtd
    * @param $xmlValor
    * @param $xmlDesconto
+   * @param $xmlNcm
    * @param $optEntityProduto
    */
-  public function __construct($xmlCodigo, $xmlNome, $xmlQtd, $xmlValor, $xmlDesconto, $optEntityProduto) {
+  public function __construct($xmlCodigo, $xmlNome, $xmlQtd, $xmlValor, $xmlDesconto, $xmlNcm, $optEntityProduto) {
     $this->xmlCodigo = $xmlCodigo;
     $this->xmlNome = $xmlNome;
     $this->xmlQtd = $xmlQtd;
     $this->xmlValor = $xmlValor;
     $this->xmlDesconto = $xmlDesconto;
+    $this->xmlNcm = $xmlNcm;
     $this->optEntityProduto = $optEntityProduto;
   }
 
@@ -66,11 +70,16 @@ class CompraImportadaStatusItem {
   /**
    * @return mixed
    */
+  public function getXmlNcm() {
+    return $this->xmlNcm;
+  }
+
+  /**
+   * @return mixed
+   */
   public function getOptEntityProduto() {
     return $this->optEntityProduto;
   }
-
-
 
   public function toArray() {
     return [ 'xmlCodigo' => $this->xmlCodigo
@@ -78,6 +87,8 @@ class CompraImportadaStatusItem {
            , 'xmlQtd' => $this->xmlQtd
            , 'xmlValor' => $this->xmlValor
            , 'xmlDesconto' => $this->xmlDesconto
-           , 'optProduto' => $this->optEntityProduto->map(function($p) { return $p->toArray(); })->getOrNull() ];
+           , 'xmlNcm' => $this->xmlNcm
+           , 'optProduto' => $this->optEntityProduto->map(function($p) { return $p->toArray(); })->getOrNull()
+    ];
   }
 }
