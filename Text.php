@@ -139,4 +139,23 @@ class Text {
     $to = $to ?: strlen($text);
     return substr($text, $from, $to - $from);
   }
+
+  /* String[] */
+  public static function multiLines($text, $length, $acc = []) {
+    $tlen = strlen($text);
+    if($tlen == 0) { 
+      return $acc;  	
+    }
+    if($tlen <= $length) {  
+      $acc[] = $text;
+      return $acc;
+    }  
+    $l = static::substring($text, 0, $length);
+    $pos = strrpos($l, ' ') ?: $length;
+    $l2 = static::substring($l, 0, $pos);
+    $l3 = trim($l2);  
+    $rest = static::substring($text, $pos);
+    if($l3) $acc[] = $l3;
+    return static::multiLines($rest, $length, $acc);
+  }
 }
