@@ -114,4 +114,8 @@ class Collection {
     return join($separator, $array);
   }
 
+  public static function zip($arrayA, $arrayB) {
+      return static::map($arrayA, function($iA, $k) use ($arrayB){ return [ $iA, $arrayB[$k] ]; });
+  }
+
 }

@@ -158,4 +158,15 @@ class Text {
     if($l3) $acc[] = $l3;
     return static::multiLines($rest, $length, $acc);
   }
+
+  public static function arrayToString($array) {
+      $result = '';
+      forEach($array as $e) {
+          if(is_array($e)) $result .= self::arrayToString($e);
+          elseif(is_null($e)) $result .= 'null';
+          else $result .= $e;
+          $result .= ',';
+      }
+      return '[' . $result . ']';
+  }
 }

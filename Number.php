@@ -25,4 +25,9 @@ final class Number {
       ? Optional::of((float) $text)
       : Optional::absent();
   }
+  public static /*Array*/ function distribute(/*Array*/ $values, /*int*/ $value,  $valuesTotal = null){
+      $valuesTotal = $valuesTotal ?: Collection::foldl($values, function($acc, $x) { return $acc + $x; }, 0);
+      $valuesDistributed = Collection::map($values, function($v) use($valuesTotal, $value) { return $v / $valuesTotal * $value ; });
+      return $valuesDistributed;
+  }
 }
