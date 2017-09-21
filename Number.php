@@ -20,7 +20,7 @@ final class Number {
     $d = pow(10, $decimals);
     return ceil($n * $d) / $d; 
   }
-  public static function strToNum($text)  {
+  public static function strToNum($text) {
     return is_numeric($text)
       ? Optional::of((float) $text)
       : Optional::absent();
