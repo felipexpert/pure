@@ -115,7 +115,15 @@ class Collection {
   }
 
   public static function zip($arrayA, $arrayB) {
-      return static::map($arrayA, function($iA, $k) use ($arrayB){ return [ $iA, $arrayB[$k] ]; });
+      return static::zipWith($arrayA, $arrayB, function($iA, $iB) { return [$iA, $iB]; });
   }
+
+  public static function zipWith($arrayA, $arrayB, $zipperFunction) {
+      return static::map($arrayA, function($iA, $k) use ($arrayB, $zipperFunction){ return $zipperFunction($iA, $arrayB[$k]); });
+  }
+
+    public static function zip3With($arrayA, $arrayB, $arrayC, $zipperFunction) {
+        return static::map($arrayA, function($iA, $k) use ($arrayB, $arrayC, $zipperFunction){ return $zipperFunction($iA, $arrayB[$k], $arrayC[$k]); });
+    }
 
 }
