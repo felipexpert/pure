@@ -169,4 +169,8 @@ class Text {
       }
       return '[' . $result . ']';
   }
+
+  public static function ISO_8859_1($text, $from = 'UTF-8'){
+      return iconv($from, 'ISO-8859-1', $text);
+  }
 }
