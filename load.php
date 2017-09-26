@@ -36,6 +36,7 @@ $files = [ 'Optional'
          , 'ponto/Interval'
          , 'ponto/Util'
          , 'util/Financeiro'
+         , 'util/APIUtilFactory'
          , 'dateTime/DateTimeUtil'
          , 'ViewHelper' ];
 
