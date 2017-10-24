@@ -13,7 +13,7 @@ class Absent extends Optional {
   }
 
   public function get() {
-    throw new Exception("Optional->get() cannot be called on an absent value");
+    throw new \Exception("Optional->get() cannot be called on an absent value");
   }
 
   public function equals($object) {
