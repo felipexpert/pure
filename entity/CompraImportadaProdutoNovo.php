@@ -19,6 +19,8 @@ class CompraImportadaProdutoNovo {
    private $valorCompra;
    private $valorVenda;
    private $ncm;
+   private $controleEstoque;
+   private $estoqueMinimo;
 
   /**
    * CompraImportadaProdutoNovo constructor.
@@ -30,7 +32,7 @@ class CompraImportadaProdutoNovo {
    * @param $valorVenda
    * @param $ncm
    */
-  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null) {
+  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null) {
     $this->codigo = $codigo;
     $this->fornecedorId = $fornecedorId;
     $this->nome = $nome;
@@ -38,6 +40,8 @@ class CompraImportadaProdutoNovo {
     $this->valorCompra = $valorCompra;
     $this->valorVenda = $valorVenda;
     $this->ncm = $ncm;
+    $this->controleEstoque = $controleEstoque;
+    $this->estoqueMinimo = $estoqueMinimo;
   }
 
   /**
@@ -94,6 +98,20 @@ class CompraImportadaProdutoNovo {
   public function getNcm() {
     return $this->ncm;
   }
+    /**
+     * @return null
+     */
+  public function getControleEstoque(){
+    return $this->controleEstoque;
+  }
+
+    /**
+     * @return null
+     */
+    public function getEstoqueMinimo()
+    {
+        return $this->estoqueMinimo;
+    }
 
   public function fromArray($data) {
     foreach($data as $key => $value) $this->{$key} = $value;
