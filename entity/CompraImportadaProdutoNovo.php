@@ -22,6 +22,7 @@ class CompraImportadaProdutoNovo {
    private $controleEstoque;
    private $estoqueMinimo;
    private $tipo;
+   private $unidade;
 
   /**
    * CompraImportadaProdutoNovo constructor.
@@ -33,7 +34,7 @@ class CompraImportadaProdutoNovo {
    * @param $valorVenda
    * @param $ncm
    */
-  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null) {
+  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null) {
     $this->codigo = $codigo;
     $this->fornecedorId = $fornecedorId;
     $this->nome = $nome;
@@ -44,6 +45,7 @@ class CompraImportadaProdutoNovo {
     $this->controleEstoque = $controleEstoque;
     $this->estoqueMinimo = $estoqueMinimo;
     $this->tipo = $tipo;
+    $this->unidade = $unidade;
   }
 
   /**
@@ -117,6 +119,10 @@ class CompraImportadaProdutoNovo {
 
     public function getTipo(){
         return $this->tipo;
+    }
+
+    public function getUnidade(){
+        return $this->unidade;
     }
 
   public function fromArray($data) {
