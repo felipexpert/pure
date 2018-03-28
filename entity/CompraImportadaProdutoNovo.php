@@ -25,6 +25,8 @@ class CompraImportadaProdutoNovo {
    private $unidade;
    private $cfop;
    private $cfopFora;
+   private $unComercial;
+   private $unTributavel;
 
   /**
    * CompraImportadaProdutoNovo constructor.
@@ -36,7 +38,7 @@ class CompraImportadaProdutoNovo {
    * @param $valorVenda
    * @param $ncm
    */
-  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null) {
+  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null, $unComercial = null, $unTributavel = null) {
     $this->codigo = $codigo;
     $this->fornecedorId = $fornecedorId;
     $this->nome = $nome;
@@ -50,6 +52,8 @@ class CompraImportadaProdutoNovo {
     $this->unidade = $unidade;
     $this->cfop = $cfop;
     $this->cfopFora = $cfopFora;
+    $this->unComercial = $unComercial;
+    $this->unTributavel = $unTributavel;
   }
 
   /**
@@ -135,6 +139,14 @@ class CompraImportadaProdutoNovo {
 
     public function getCFOPFora(){
         return $this->cfopFora;
+    }
+
+    public function getUnComercial(){
+        return $this->unComercial;
+    }
+
+    public function getUnTributavel(){
+        return $this->unTributavel;
     }
 
   public function fromArray($data) {
