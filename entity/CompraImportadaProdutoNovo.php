@@ -23,6 +23,8 @@ class CompraImportadaProdutoNovo {
    private $estoqueMinimo;
    private $tipo;
    private $unidade;
+   private $cfop;
+   private $cfopFora;
 
   /**
    * CompraImportadaProdutoNovo constructor.
@@ -34,7 +36,7 @@ class CompraImportadaProdutoNovo {
    * @param $valorVenda
    * @param $ncm
    */
-  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null) {
+  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null) {
     $this->codigo = $codigo;
     $this->fornecedorId = $fornecedorId;
     $this->nome = $nome;
@@ -46,6 +48,8 @@ class CompraImportadaProdutoNovo {
     $this->estoqueMinimo = $estoqueMinimo;
     $this->tipo = $tipo;
     $this->unidade = $unidade;
+    $this->cfop = $cfop;
+    $this->cfopFora = $cfopFora;
   }
 
   /**
@@ -123,6 +127,14 @@ class CompraImportadaProdutoNovo {
 
     public function getUnidade(){
         return $this->unidade;
+    }
+
+    public function getCFOP(){
+        return $this->cfop;
+    }
+
+    public function getCFOPFora(){
+        return $this->cfopFora;
     }
 
   public function fromArray($data) {
