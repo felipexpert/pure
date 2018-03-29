@@ -27,6 +27,8 @@ class CompraImportadaProdutoNovo {
    private $cfopFora;
    private $unComercial;
    private $unTributavel;
+   private $ICMSSitTributaria;
+   private $origem;
 
   /**
    * CompraImportadaProdutoNovo constructor.
@@ -38,7 +40,7 @@ class CompraImportadaProdutoNovo {
    * @param $valorVenda
    * @param $ncm
    */
-  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null, $unComercial = null, $unTributavel = null) {
+  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null, $unComercial = null, $unTributavel = null, $ICMSSitTributaria = null, $origem = null) {
     $this->codigo = $codigo;
     $this->fornecedorId = $fornecedorId;
     $this->nome = $nome;
@@ -54,6 +56,8 @@ class CompraImportadaProdutoNovo {
     $this->cfopFora = $cfopFora;
     $this->unComercial = $unComercial;
     $this->unTributavel = $unTributavel;
+    $this->ICMSSitTributaria = $ICMSSitTributaria;
+    $this->origem = $origem;
   }
 
   /**
@@ -147,6 +151,14 @@ class CompraImportadaProdutoNovo {
 
     public function getUnTributavel(){
         return $this->unTributavel;
+    }
+
+    public function getICMSSitTributaria(){
+        return $this->ICMSSitTributaria;
+    }
+
+    public function getOrigem(){
+        return $this->origem;
     }
 
   public function fromArray($data) {
