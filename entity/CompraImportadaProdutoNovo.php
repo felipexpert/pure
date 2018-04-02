@@ -29,6 +29,12 @@ class CompraImportadaProdutoNovo {
    private $unTributavel;
    private $ICMSSitTributaria;
    private $origem;
+   private $pisSitTributaria;
+   private $pisCalculo;
+   private $pisSTCalculo;
+   private $cofinsSitTributaria;
+   private $cofinsCalculo;
+   private $cofinsSTCalculo;
 
   /**
    * CompraImportadaProdutoNovo constructor.
@@ -40,7 +46,7 @@ class CompraImportadaProdutoNovo {
    * @param $valorVenda
    * @param $ncm
    */
-  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null, $unComercial = null, $unTributavel = null, $ICMSSitTributaria = null, $origem = null) {
+  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null, $unComercial = null, $unTributavel = null, $ICMSSitTributaria = null, $origem = null, $pisSitTributaria = null, $pisCalculo = null, $pisSTCalculo = null, $cofinsSitTributaria = null, $cofinsCalculo = null, $cofinsSTCalculo = null) {
     $this->codigo = $codigo;
     $this->fornecedorId = $fornecedorId;
     $this->nome = $nome;
@@ -58,6 +64,12 @@ class CompraImportadaProdutoNovo {
     $this->unTributavel = $unTributavel;
     $this->ICMSSitTributaria = $ICMSSitTributaria;
     $this->origem = $origem;
+    $this->pisSitTributaria = $pisSitTributaria;
+    $this->pisCalculo = $pisCalculo;
+    $this->pisSTCalculo = $pisSTCalculo;
+    $this->cofinsSitTributaria = $cofinsSitTributaria;
+    $this->cofinsCalculo = $cofinsCalculo;
+    $this->cofinsSTCalculo = $cofinsSTCalculo;
   }
 
   /**
@@ -159,6 +171,30 @@ class CompraImportadaProdutoNovo {
 
     public function getOrigem(){
         return $this->origem;
+    }
+
+    public function getPisSitTributaria(){
+        return $this->pisSitTributaria;
+    }
+
+    public function getPisCalculo(){
+        return $this->pisCalculo;
+    }
+
+    public function getPisSTCalculo(){
+        return $this->pisSTCalculo;
+    }
+
+    public function getCofinsSitTributaria(){
+        return $this->cofinsSitTributaria;
+    }
+
+    public function  getCofinsCalculo(){
+        return $this->cofinsCalculo;
+    }
+
+    public function getCofinsSTCalculo(){
+        return $this->cofinsSTCalculo;
     }
 
   public function fromArray($data) {
