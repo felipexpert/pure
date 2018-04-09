@@ -35,6 +35,7 @@ class CompraImportadaProdutoNovo {
    private $cofinsSitTributaria;
    private $cofinsCalculo;
    private $cofinsSTCalculo;
+   private $valorPorcentagem;
 
   /**
    * CompraImportadaProdutoNovo constructor.
@@ -46,7 +47,7 @@ class CompraImportadaProdutoNovo {
    * @param $valorVenda
    * @param $ncm
    */
-  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null, $unComercial = null, $unTributavel = null, $ICMSSitTributaria = null, $origem = null, $pisSitTributaria = null, $pisCalculo = null, $pisSTCalculo = null, $cofinsSitTributaria = null, $cofinsCalculo = null, $cofinsSTCalculo = null) {
+  public function __construct($codigo = null, $fornecedorId = null, $nome = null, $descricao = null, $valorCompra = null, $valorVenda = null, $ncm = null, $controleEstoque = null, $estoqueMinimo = null, $tipo = null, $unidade = null, $cfop = null, $cfopFora = null, $unComercial = null, $unTributavel = null, $ICMSSitTributaria = null, $origem = null, $pisSitTributaria = null, $pisCalculo = null, $pisSTCalculo = null, $cofinsSitTributaria = null, $cofinsCalculo = null, $cofinsSTCalculo = null, $valorPorcentagem = null) {
     $this->codigo = $codigo;
     $this->fornecedorId = $fornecedorId;
     $this->nome = $nome;
@@ -70,6 +71,7 @@ class CompraImportadaProdutoNovo {
     $this->cofinsSitTributaria = $cofinsSitTributaria;
     $this->cofinsCalculo = $cofinsCalculo;
     $this->cofinsSTCalculo = $cofinsSTCalculo;
+    $this->valorPorcentagem = $valorPorcentagem;
   }
 
   /**
@@ -195,6 +197,10 @@ class CompraImportadaProdutoNovo {
 
     public function getCofinsSTCalculo(){
         return $this->cofinsSTCalculo;
+    }
+
+    public function getValorPorcentagem(){
+        return $this->valorPorcentagem;
     }
 
   public function fromArray($data) {
