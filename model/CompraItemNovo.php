@@ -37,7 +37,7 @@ class CompraItemNovo {
    * @return mixed
    */
   public function getDesconto() {
-    return $this->desconto;
+    return ($this->desconto * 100) / ($this->getValor() * $this->getQuantidade()); // atualizacao feita dia 01/06/2018 para transformar o valor do desconto em porcentagem
   }
 
   /**
