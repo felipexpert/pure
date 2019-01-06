@@ -50,7 +50,7 @@ class Text {
   public static function escapeQuery($query, $args) {
     $escapedArgs = [];
     forEach($args as $arg) 
-      $escapedArgs[] = mysql_real_escape_string($arg);
+      $escapedArgs[] = mysqli_real_escape_string($arg);
     $escaped = $query;
     forEach($escapedArgs as $key => $value) {
       $pos = $key + 1;
